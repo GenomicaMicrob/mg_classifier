@@ -30,7 +30,7 @@ We have preformated some databases that are publicly available:
 18S rRNA
 - [Protist](https://figshare.com/articles/PR2_rRNA_gene_database/3803709) PR2 ver. 4.5
 
-We recommend getting the [EzBioCloud](http://www.ezbiocloud.net/resources/pipelines) curated database, but since it is not publicly available (although it is free for academia), we cannot distributed it. If you get it, then you´ll have to formatted accordingly.
+We recommend getting the [EzBioCloud](http://www.ezbiocloud.net/resources/pipelines) curated database, but since it is not publicly available (although it is free for academia), we cannot distributed it. If you get it, then you´ll have to formatted accordingly. You can use our script [db_reformatter.sh](https://github.com/GenomicaMicrob/db_reformatter).
 
 ### Usage
 Go to a folder where you have all your clean multifasta files of you samples and type:
