@@ -21,14 +21,14 @@ The databases have to have the following format:
 >accession:domain;phylum;class;order;family;genus;species
 agtcgggcttaggtaaaaa
 ```
-We have preformated some databases that are publicly available:
+We have preformated some databases that are publicly available and can be downloaded from figshare (**soon**):
 
 16S rRNA
-- [SILVA](https://www.arb-silva.de) ver. 128
-- [RDP](http://rdp.cme.msu.edu/misc/resources.jsp) ver. 11.5
+- [SILVA] ver. 128 (see original [source](https://www.arb-silva.de))
+- [RDP] ver. 11.5 (see original [source](http://rdp.cme.msu.edu/misc/resources.jsp))
 
 18S rRNA
-- [Protist](https://figshare.com/articles/PR2_rRNA_gene_database/3803709) PR2 ver. 4.5
+- [Protist] PR2 ver. 4.5 (see original [source](https://figshare.com/articles/PR2_rRNA_gene_database/3803709))
 
 We recommend getting the [EzBioCloud](http://www.ezbiocloud.net/resources/pipelines) curated database, but since it is not publicly available (although it is free for academia), we cannot distributed it. If you get it, then you´ll have to formatted accordingly. You can use our script [db_reformatter.sh](https://github.com/GenomicaMicrob/db_reformatter).
 
