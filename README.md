@@ -1,4 +1,6 @@
 # mg_classifier
+**Available soon**
+
 Super fast script for classifying metagenomic 16S/18S sequences
 ### version 1.4
 
