@@ -9,7 +9,7 @@ mg_classifier assigns a taxonomy to 16S or 18S sequences produced by PCR amplifi
 ### Dependencies
 You will need the following scripts in you [PATH](http://www.troubleshooters.com/linux/prepostpath.htm); or just download them and move them to /usr/bin (you will need superuser authorization for this, example: `sudo mv vsearch /usr/bin`.
 - To cluster and classify sequences it relies on [vsearch](https://github.com/torognes/vsearch).
-- [fastagrep](http://search.cpan.org/~jwb/Bio-Gonzales-0.05/bin/fagrep).
+- [fastagrep](http://nebc.nerc.ac.uk/nebc_website_frozen/nebc.nerc.ac.uk//tools/code-corner/scripts/sequence-formatting-and-other-text-manipulation.html#-ace_split-pl).
 - If you are processing many samples (usual stuff) the script needs another little perl script called compile_classifications.pl.
 
 Of course, you will also need a database, for the fast processing of data, mg_classifier has to have the database formatted in a certain way.
