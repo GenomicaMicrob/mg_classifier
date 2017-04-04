@@ -45,7 +45,7 @@ Go to a folder where you have all your clean multifasta files of you samples and
 You just have to type in the extension of you files (fasta or fna or fa, etc.) without the dot. It will present a menu where you can select a database to use. Since it is super fast, you probably don´t need to close the terminal, but i case you do, it will continue working as long as you do NOT cancel the process with Crtl Z. So, if you want to exit but leave it running, just close the terminal window.
 
 ### How fast?
-110,501 sequences (mean length 165.9 bases, 18.14 million bases) in 3 files were classified:
+110,501 sequences (mean length 165.9 bases, 18.14 million bases) in 3 files were classified in a 64 core 128 GB RAM Dell PowerEdge R810 server with the following results:
 
 | Database | Size (MB) | Time |
 | --- | ---: | ---:|
