@@ -47,11 +47,11 @@ You just have to type in the extension of you files (fasta or fna or fa, etc.) w
 ### How fast?
 110,501 sequences (mean length 165.9 bases, 18.14 million bases) in 3 files were classified with:
 
-| Database | Time |
-| --- | ---: |
-| EzBioCloud-1.5 | **9 sec** |
-| SILVA_128 | **27 sec** |
-| RDP_11.5 | **6:25 min** |
+| Database | Size (MB) | Time |
+| --- | ---: | ---:|
+| EzBioCloud-1.5 | 96.6 | **9 sec** |
+| SILVA_128 | 303.4 | **27 sec** |
+| RDP_11.5 | 3,800.0 | **6:25 min** |
 
 Time depends on many factors, nost notably:
 - **Size of the database**.
