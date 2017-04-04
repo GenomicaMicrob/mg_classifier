@@ -43,3 +43,18 @@ Go to a folder where you have all your clean multifasta files of you samples and
 `$ mg_classifier fasta`
 
 You just have to type in the extension of you files (fasta or fna or fa, etc.) without the dot. It will present a menu where you can select a database to use. Since it is super fast, you probably don´t need to close the terminal, but i case you do, it will continue working as long as you do NOT cancel the process with Crtl Z. So, if you want to exit but leave it running, just close the terminal window.
+
+### How fast?
+110,501 sequences (mean length 165.9 bases, 18.14 million bases) in 3 files were classified with:
+
+| Database | Time |
+| --- | ---: |
+| EzBioCloud-1.5 | **9 sec** |
+| SILVA_128 | **27 sec** |
+| RDP_11.5 | **6:25 min** |
+
+Time depends on many factors, nost notably:
+- **Size of the database**.
+- Sequences per sample.
+- Mean size of the sequences.
+- Not so the number of samples, as samples are processed simultanously; the number of cores of the server is the limiting factor here.
