@@ -7,7 +7,7 @@ Super fast script for classifying metagenomic 16S/18S sequences
 mg_classifier assigns a taxonomy to 16S or 18S sequences produced by PCR amplification of metagenomic DNA. It can classify the sequences with several public databases.
 
 ### Dependencies
-You will need the following scripts in you path:
+You will need the following scripts in you [PATH](http://www.troubleshooters.com/linux/prepostpath.htm); or just download them and move them to /usr/bin (you will need superuser authorization for this, example: `sudo mv vsearch /usr/bin`.
 - To cluster and classify sequences it relies on [vsearch](https://github.com/torognes/vsearch).
 - [fastagrep](http://search.cpan.org/~jwb/Bio-Gonzales-0.05/bin/fagrep).
 - If you are processing many samples (usual stuff) the script needs another little perl script called compile_classifications.pl.
@@ -24,11 +24,16 @@ agtcgggcttaggtaaaaa
 We have preformated some databases that are publicly available and can be downloaded from figshare (**soon**):
 
 16S rRNA
-- [SILVA] ver. 128 (see original [source](https://www.arb-silva.de))
-- [RDP] ver. 11.5 (see original [source](http://rdp.cme.msu.edu/misc/resources.jsp))
+- [SILVA] ver. 128, 48.3 MB (see original [source](https://www.arb-silva.de))
+- [RDP] ver. 11.5, 311.5 MB (see original [source](http://rdp.cme.msu.edu/misc/resources.jsp))
 
 18S rRNA
-- [Protist] PR2 ver. 4.5 (see original [source](https://figshare.com/articles/PR2_rRNA_gene_database/3803709))
+- [Protist] PR2 ver. 4.5, 20.4 MB (see original [source](https://figshare.com/articles/PR2_rRNA_gene_database/3803709))
+### Database download
+
+1. Create a subdirectory `mkdir db` within the directory where mg_classifier is placed
+2. Download the databases to db/ from figshare
+3. Uncompress the databases `gzip -d database.gz`
 
 We recommend getting the [EzBioCloud](http://www.ezbiocloud.net/resources/pipelines) curated database, but since it is not publicly available (although it is free for academia), we cannot distributed it. If you get it, then you´ll have to formatted accordingly. You can use our script [db_reformatter.sh](https://github.com/GenomicaMicrob/db_reformatter).
 
