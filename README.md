@@ -16,8 +16,8 @@ You will need the following scripts in you [PATH](http://www.troubleshooters.com
 The best way to get mg_classifier is to clone this repository directly to your linux:
 1. Open a terminal and go to your prefered folder.
 2. Type `git clone https://github.com/GenomicaMicrob/mg_classifier.git`, this will automatically download all basic files to a new folder called mg_classifier.
-3. Make all scripts executable: `chmod +x mgclassifier/mg_classifier.sh mgclassifier/scripts/*.pl`.
-3. Download the databases to the created subfolder `databases/` from figshare (soon).
+3. Make all scripts executable: `chmod +x mgclassifier/*.sh mgclassifier/scripts/*.pl`.
+3. Download the databases; change to the created folder `cd mg_classifier` and execute the script to start the download of the three databases from figshare: `./download_dbs.sh`. The script will download a 445 MB file into the appropiate folder and uncompress it.
 
 For the fast processing of data, mg_classifier has to have the database formatted in a certain way.
 
@@ -28,19 +28,14 @@ The databases have to have the following format:
 >accession:domain;phylum;class;order;family;genus;species
 agtcgggcttaggtaaaaa
 ```
-We have preformated some databases that are publicly available and can be downloaded from figshare (**soon**):
+We have preformated some databases that are publicly available and can be also downloaded from [figshare](https://figshare.com/account/home#/projects/20254).
 
 16S rRNA
-- [SILVA] ver. 128, 48.3 MB (see original [source](https://www.arb-silva.de))
-- [RDP] ver. 11.5, 311.5 MB (see original [source](http://rdp.cme.msu.edu/misc/resources.jsp))
+- [SILVA](10.6084/m9.figshare.4814062) ver. 128, 48.3 MB (see original [source](https://www.arb-silva.de))
+- [RDP](10.6084/m9.figshare.4814959) ver. 11.5, 311.5 MB (see original [source](http://rdp.cme.msu.edu/misc/resources.jsp))
 
 18S rRNA
-- [Protist] PR2 ver. 4.5, 20.4 MB (see original [source](https://figshare.com/articles/PR2_rRNA_gene_database/3803709))
-### Database download
-
-1. Create a subdirectory `mkdir db` within the directory where mg_classifier is placed
-2. Download the databases to db/ from figshare
-3. Uncompress the databases `gzip -d database.gz`
+- [Protist](10.6084/m9.figshare.4814056) PR2 ver. 4.5, 20.4 MB (see original [source](https://figshare.com/articles/PR2_rRNA_gene_database/3803709))
 
 We recommend getting the [EzBioCloud](http://www.ezbiocloud.net/resources/pipelines) curated database, but since it is not publicly available (although it is free for academia), we cannot distributed it. If you get it, then you´ll have to formatted accordingly. You can use our script [db_reformatter.sh](https://github.com/GenomicaMicrob/db_reformatter).
 
