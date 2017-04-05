@@ -9,10 +9,17 @@ mg_classifier assigns a taxonomy to 16S or 18S sequences produced by PCR amplifi
 ### Dependencies
 You will need the following scripts in you [PATH](http://www.troubleshooters.com/linux/prepostpath.htm); or just download them and move them to /usr/bin (you will need superuser authorization for this, example: `sudo mv vsearch /usr/bin`.
 - To cluster and classify sequences it relies on [vsearch](https://github.com/torognes/vsearch).
-- [fastagrep](http://nebc.nerc.ac.uk/nebc_website_frozen/nebc.nerc.ac.uk//tools/code-corner/scripts/sequence-formatting-and-other-text-manipulation.html#-ace_split-pl).
-- If you are processing many samples (usual stuff) the script needs another little perl script called compile_classifications.pl.
+- [fastagrep](http://nebc.nerc.ac.uk/nebc_website_frozen/nebc.nerc.ac.uk//tools/code-corner/scripts/sequence-formatting-and-other-text-manipulation.html#-ace_split-pl) which is included in the `scripts/ ` subfolder.
+- If you are processing many samples (usual stuff) the script needs another little perl script called compile_classifications.pl, also included in the `scripts/ ` subfolder.
 
-Of course, you will also need a database, for the fast processing of data, mg_classifier has to have the database formatted in a certain way.
+### Download and install
+The best way to get mg_classifier is to clone this repository directly to your linux:
+1. Open a terminal and go to your prefered folder.
+2. Type `git clone https://github.com/GenomicaMicrob/mg_classifier.git`, this will automatically download all basic files to a new folder called mg_classifier.
+3. Make all scripts executable: `chmod +x mgclassifier/mg_classifier.sh mgclassifier/scripts/*.pl`.
+3. Download the databases to the created subfolder `databases/` from figshare (soon).
+
+For the fast processing of data, mg_classifier has to have the database formatted in a certain way.
 
 ### Database format
 The databases have to have the following format:
