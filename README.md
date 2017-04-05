@@ -1,7 +1,7 @@
 # mg_classifier
 **Available soon**
 
-Super fast script for classifying metagenomic 16S/18S sequences
+Super-fast script for classifying metagenomic 16S/18S sequences.
 ### version 1.4
 
 mg_classifier assigns a taxonomy to 16S or 18S sequences produced by PCR amplification of metagenomic DNA. It can classify the sequences with several public databases.
@@ -45,6 +45,26 @@ Go to a folder where you have all your clean multifasta files of you samples and
 `$ mg_classifier fasta`
 
 You just have to type in the extension of you files (fasta or fna or fa, etc.) without the dot. It will present a menu where you can select a database to use. Since it is super fast, you probably don´t need to close the terminal, but i case you do, it will continue working as long as you do NOT cancel the process with Crtl Z. So, if you want to exit but leave it running, just close the terminal window.
+
+### Output
+mg_classifier will produce four files:
+- **otus.tsv** A file containing the taxonomy and numbers of sequences per sample.
+- **Bacteria_otus.spf** An file with only the sequences assigned to Bacteria that can be opened directly by [STAMP](http://kiwi.cs.dal.ca/Software/STAMP).
+- **OTUs_taxon.tsv** Information of how many hits per taxonomic level per sample.
+- ** mgclassifier.log ** A log file.
+
+All files are separated by tab, so they can be also opened with Excel.
+
+** Example ** of the otus file:
+```
+%Id;domain;phylum;class;order;family;genus;species	A	B	C
+75.6;Eukaryota;Metazoa;Unclassified_c;Unclassified_o;Unclassified_f;Unclassified_g;Unclassified_s	8	17	0
+76.3;Bacteria;Proteobacteria;Unclassified_c;Unclassified_o;Unclassified_f;Unclassified_g;Unclassified_s	0	0	2
+97>;Bacteria;Bacteroidetes;Bacteroidia;Bacteroidales;Prolixibacteraceae;Draconibacterium;Draconibacterium_filum	0	0	2
+97>;Bacteria;Bacteroidetes;Cytophagia;Cytophagales;Cyclobacteriaceae;Algoriphagus;Algoriphagus_namhaensis	0	17	0
+
+```
+Three samples (A, B and C) were classified; the first column has the percentage of similitud of the representative sequence from a cluster to the database; then the taxonomy assigned to that cluster, and finally the number of sequences in that cluster per sample.
 
 ### How fast?
 110,501 16S V3 sequences (mean length 165.9 bases, 18.14 million bases) in 3 files were classified in a 64 core 128 GB RAM Dell PowerEdge R810 server with the following results:
