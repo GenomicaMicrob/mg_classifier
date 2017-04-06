@@ -61,16 +61,19 @@ mg_classifier will produce four files:
 
 All files are separated by tab, so they can be also opened with Excel.
 
-** Example ** of the otus file:
+**Example** of the otus file:
 ```
-%Id;domain;phylum;class;order;family;genus;species	A	B	C
-75.6;Eukaryota;Metazoa;Unclassified_c;Unclassified_o;Unclassified_f;Unclassified_g;Unclassified_s	8	17	0
-76.3;Bacteria;Proteobacteria;Unclassified_c;Unclassified_o;Unclassified_f;Unclassified_g;Unclassified_s	0	0	2
-97>;Bacteria;Bacteroidetes;Bacteroidia;Bacteroidales;Prolixibacteraceae;Draconibacterium;Draconibacterium_filum	0	0	2
-97>;Bacteria;Bacteroidetes;Cytophagia;Cytophagales;Cyclobacteriaceae;Algoriphagus;Algoriphagus_namhaensis	0	17	0
+%Id;domain;phylum;class;order;family;genus;species	F3D0	F3D9	mock
+88.3;Bacteria;Firmicutes;Clostridia;Clostridiales;Clostridiaceae;Unclassified_g;Unclassified_s	2	0	0
+88.5;Bacteria;Firmicutes;Bacilli;Bacillales;Staphylococcaceae;Unclassified_g;Unclassified_s	0	0	621
+96.9;Bacteria;Firmicutes;Clostridia;Clostridiales;Ruminococcaceae;Pseudoflavonifractor;Unclassified_s	6	0	0
+97>;Bacteria;Firmicutes;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus_bingmayongensis	0	0	382
+97>;Bacteria;Bacteroidetes;Bacteroidia;Bacteroidales;S24-7_f;FJ879262_g;EF100028_s	66	9	0
 
 ```
-Three samples (A, B and C) were classified; the first column has the percentage of similitud of the representative sequence from a cluster to the database; then the taxonomy assigned to that cluster, and finally the number of sequences in that cluster per sample.
+Three samples were classified; the first column has the percentage of similitud of the representative sequence from a cluster to the database; then the taxonomy assigned to that cluster, and finally the number of sequences in that cluster per sample. Samples are from P. Schloss [Miseq SOP webpage](https://www.mothur.org/wiki/MiSeq_SOP).
+
+Threshold values for delimiting a taxon were taken from [Yarza et al. 2014. Nat Rev Microbiol 12:635-645](http://www.nature.com/nrmicro/journal/v12/n9/full/nrmicro3330.html).
 
 ### How fast?
 18,882 16S V4 sequences (mean length 232.6 bases, 4.35 million bases) in 3 files were classified in a 64 core 128 GB RAM Dell PowerEdge R810 server with the following results:
