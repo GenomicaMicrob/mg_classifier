@@ -75,7 +75,7 @@ Three samples (A, B and C) were classified; the first column has the percentage 
 ### How fast?
 18,882 16S V4 sequences (mean length 232.6 bases, 4.35 million bases) in 3 files were classified in a 64 core 128 GB RAM Dell PowerEdge R810 server with the following results:
 
-| Database | Size (MB) | Time |
+| Database | DB size (MB) | Time |
 | --- | ---: | ---:|
 | EzBioCloud-1.5 | 96.6 | **7 sec** |
 | SILVA_128 | 303.4 | **25 sec** |
