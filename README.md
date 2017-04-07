@@ -2,7 +2,7 @@
 **Available soon**
 
 Super-fast script for classifying metagenomic 16S/18S sequences.
-### version 1.4
+### version 1.0.0
 
 mg_classifier assigns a taxonomy to 16S or 18S sequences produced by PCR amplification of metagenomic DNA. It can classify the sequences with several public databases.
 
