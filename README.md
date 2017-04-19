@@ -76,13 +76,14 @@ Three samples were classified; the first column has the percentage of similitud 
 Threshold values for delimiting a taxon were taken from [Yarza et al. 2014. Nat Rev Microbiol 12:635-645](http://www.nature.com/nrmicro/journal/v12/n9/full/nrmicro3330.html).
 
 ### How fast?
-18,882 16S V4 sequences (mean length 232.6 bases, 4.35 million bases) in 3 files were classified in a 64 core 128 GB RAM Dell PowerEdge R810 server with the following results:
+22,267 16S V4 sequences (mean length 228.7 bases, 5.18 million bases) in 4 files were classified in a 64 core 128 GB RAM Dell PowerEdge R810 server with the following results:
 
 | Database | DB size (MB) | Time |
-| --- | ---: | ---:|
-| EzBioCloud-1.5 | 96.6 | **7 sec** |
-| SILVA_128 | 303.4 | **25 sec** |
-| RDP_11.5 | 3,800.0 | **5:33 min** |
+| --- | ---: | ---:| ---:|
+| EzBioCloud-1.5 | 96.6 | **22 sec** |
+| SILVA_128 | 303.4 | **1:11 min** |
+| RDP_11.5 | 3,200.0 | **12:11 min** |
+| RDP_11.5 V3-V4 | 1,018 | **3:16 min** |
 
 Time depends on many factors, most notably:
 - **Size of the database**.
