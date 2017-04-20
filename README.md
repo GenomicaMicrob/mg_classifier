@@ -1,5 +1,5 @@
 # mg_classifier
-**Available soon**
+## Available soon
 
 Super-fast script for classifying metagenomic 16S/18S sequences.
 ### version 1.0.0
@@ -7,19 +7,18 @@ Super-fast script for classifying metagenomic 16S/18S sequences.
 mg_classifier assigns a taxonomy to 16S or 18S sequences produced by PCR amplification of metagenomic DNA. It can classify the sequences with several public databases.
 
 ### Dependencies
-You will need to install **vsearch**, to do so, please follow the instructions in the vsearch github [webpage](https://github.com/torognes/vsearch).
-
-Other scripts are included, although you might want them to be in you [PATH](http://www.troubleshooters.com/linux/prepostpath.htm); you can do this by copying them to /usr/bin (you will need superuser authorization for this, example: `sudo cp fastagrep.pl /usr/bin`) after they have been made executable (see below).
+All necessary scripts are included in the `scripts/ ` subfolder:
 - To cluster and classify sequences it relies on [vsearch](https://github.com/torognes/vsearch).
-- [fastagrep](http://nebc.nerc.ac.uk/nebc_website_frozen/nebc.nerc.ac.uk//tools/code-corner/scripts/sequence-formatting-and-other-text-manipulation.html#-ace_split-pl) which is included in the `scripts/ ` subfolder.
-- If you are processing many samples (usual stuff) the script needs another little perl script called compile_classifications.pl, also included in the `scripts/ ` subfolder.
+- If you are processing many samples (usual stuff) the script needs another little perl script called compile_classifications.pl.
 
 ### Download and install
 The best way to get mg_classifier is to clone this repository directly to your linux:
 1. Open a terminal and go to your prefered folder.
 2. Type `git clone https://github.com/GenomicaMicrob/mg_classifier.git`, this will automatically download all basic files to a new folder called mg_classifier, except vsearch.
 3. Make the install script executable: `chmod +x install.sh`.
-3. Execute the script as superuser: `sudo ./install.sh`. The script will download a big file (~445 MB) with the databases into the appropiate folder and uncompress it;it will also make symbolic links (in `/usr/local/bin`) to the necessary scripts.
+3. Execute the script as superuser: `sudo ./install.sh`
+
+The script will download a big file (~445 MB) with the databases into the appropiate folder and uncompress it. It will also make symbolic links (in `/usr/local/bin`) to the necessary scripts.
 
 For the fast processing of data, mg_classifier has to have the database formatted in a certain way.
 
@@ -50,7 +49,7 @@ If you want to classify only one or some files, you can type them:
 
 `$ ./mg_classifier.ver1.4.sh file1.fasta file2.fna`
 
-Afterwards, it will present a menu where you can select a database to use. Since it is super fast, you probably don´t need to close the terminal, but i case you do, it will continue working as long as you do NOT cancel the process with `Crtl Z`. So, if you want to exit but leave it running, just close the terminal window.
+Afterwards, it will present a menu where you can select a database to use. Since it is super fast, you probably don't need to close the terminal, but i case you do, it will continue working as long as you do NOT cancel the process with `Crtl Z`. So, if you want to exit but leave it running, just close the terminal window.
 
 ### Output
 mg_classifier will produce four files:
@@ -92,3 +91,4 @@ Time depends on many factors, most notably:
 - Sequences per sample.
 - Mean size of the sequences.
 - Not so the number of samples, as samples are processed simultanously; the number of cores of the server is the limiting factor here.
+- A big constrain might be the RAM memory available since it will upload to the memory the database, once per sample. So, if you process 10 samples with the 1 GB RDP_V3-V4 databse, you´ll need about 10 GB of RAM.
