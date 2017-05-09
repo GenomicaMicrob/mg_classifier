@@ -92,3 +92,6 @@ Time depends on many factors, most notably:
 - Mean size of the sequences.
 - Not so the number of samples, as samples are processed simultanously; the number of cores of the server is the limiting factor here.
 - A big constrain might be the RAM memory available since it will upload to the memory the database, once per sample. So, if you process 10 samples with the 1 GB RDP_V3-V4 databse, you´ll need about 10 GB of RAM.
+
+### Acknoledgments
+This work was partially supported by the CONACYT project CB-2014-01 238458 and by CIAD, A.C.
