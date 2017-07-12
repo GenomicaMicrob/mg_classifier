@@ -37,24 +37,29 @@ We have preformated some databases that are publicly available and can be also d
 
 18S rRNA
 - [Protist](10.6084/m9.figshare.4814056) PR2 ver. 4.5 (see original [source](https://figshare.com/articles/PR2_rRNA_gene_database/3803709))
+- SILVA ver. 128 (only eukaryotic sequences, see original [source](https://www.arb-silva.de))
 
 We recommend getting the [EzBioCloud](http://www.ezbiocloud.net/resources/pipelines) curated database, but since it is not publicly available (although it is free for academia), we cannot distributed it. If you get it, then you´ll have to formatted accordingly. You can use our script [db_reformatter.sh](https://github.com/GenomicaMicrob/db_reformatter).
 
 ### Usage
 Go to a folder where you have all your clean multifasta files of you samples and type:
 
-`$ ./mg_classifier.ver1.4.sh *.fasta`
+`$ ./mg_classifier.sh *.fasta`
 
 If you want to classify only one or some files, you can type them:
 
-`$ ./mg_classifier.ver1.4.sh file1.fasta file2.fna`
+`$ ./mg_classifier.sh file1.fasta file2.fna`
 
 Afterwards, it will present a menu where you can select a database to use. Since it is super fast, you probably don't need to close the terminal, but i case you do, it will continue working as long as you do NOT cancel the process with `Crtl Z`. So, if you want to exit but leave it running, just close the terminal window.
+
+You can get help by typing:
+
+`$ ./mg_classifier.sh -h`
 
 ### Output
 mg_classifier will produce four files:
 - **otus.tsv** A file containing the taxonomy and numbers of sequences per sample.
-- **otus.spf** A file that can be opened directly by [STAMP](http://kiwi.cs.dal.ca/Software/STAMP).
+- **bacteria.spf** or **eukaryota.spf** A file that can be opened directly by [STAMP](http://kiwi.cs.dal.ca/Software/STAMP); the name of the file depends if 16S or 18S was chosen.
 - **OTUs_taxon.tsv** Information of how many hits per taxonomic level per sample.
 - **mgclassifier.log** A log file.
 
@@ -74,7 +79,7 @@ All files are separated by tab, so they can be also opened with Excel.
 ```
 Four samples were classified; the first column has the percentage of similitud of the representative sequence from a cluster to the assigned sequences in the database; then the taxonomy assigned to that cluster, and finally the number of sequences in that cluster per sample. Samples are from P. Schloss [Miseq SOP webpage](https://www.mothur.org/wiki/MiSeq_SOP).
 
-Threshold values for delimiting a taxon were taken from [Yarza et al. 2014. Nat Rev Microbiol 12:635-645](http://www.nature.com/nrmicro/journal/v12/n9/full/nrmicro3330.html).
+Threshold values for delimiting a bacterial taxon were taken from [Yarza et al. 2014. Nat Rev Microbiol 12:635-645](http://www.nature.com/nrmicro/journal/v12/n9/full/nrmicro3330.html). For 18S, the species threshold was set to 99.0 %, but other taxon thresholds were kept the same as for bacteria, this still has to be fine-tuned, use it with caution.
 
 ### How fast?
 22,267 16S V4 sequences (mean length 228.7 bases, 5.18 million bases) in 4 files were classified in a 64 core 128 GB RAM Dell PowerEdge R810 server with the following results:
@@ -88,6 +93,7 @@ Threshold values for delimiting a taxon were taken from [Yarza et al. 2014. Nat 
 
 Time depends on many factors, most notably:
 - **Size of the database**.
+- Number of CPUs, since each sample (fasta file) will be run in one CPU.
 - Sequences per sample.
 - Mean size of the sequences.
 - Not so the number of samples, as samples are processed simultanously; the number of cores of the server is the limiting factor here.
