@@ -29,17 +29,9 @@ The databases have to have the following format:
 >accession:domain;phylum;class;order;family;genus;species
 agtcgggcttaggtaaaaa
 ```
-We have preformated some databases that are publicly available and can be also downloaded from [figshare](https://figshare.com/account/home#/projects/20254). The databases are both in fasta format and udb for faster performance. A udb file is a database file that contains sequences and a k-mer index for those sequences.
+We have preformated some [databases](https://github.com/GenomicaMicrob/metagenomic_pipeline/blob/master/databases.md) that are publicly available and can be also downloaded from [figshare](https://figshare.com/account/home#/projects/27328).
 
-16S rRNA
-- [SILVA](10.6084/m9.figshare.4814062) ver. 128 (see original [source](https://www.arb-silva.de))
-- [RDP](10.6084/m9.figshare.4814959) ver. 11.5 (see original [source](http://rdp.cme.msu.edu/misc/resources.jsp))
-
-18S rRNA
-- [Protist](10.6084/m9.figshare.4814056) PR2 ver. 4.5 (see original [source](https://figshare.com/articles/PR2_rRNA_gene_database/3803709))
-- SILVA ver. 128 (only eukaryotic sequences, see original [source](https://www.arb-silva.de))
-
-We recommend getting the [EzBioCloud](http://www.ezbiocloud.net/resources/pipelines) curated database, but since it is not publicly available (although it is free for academia), we cannot distributed it. If you get it, then you´ll have to formatted accordingly. You can use our script [db_reformatter.sh](https://github.com/GenomicaMicrob/db_reformatter). To convert it to an udb file, you'll need vsearch 2.5.0:
+More information [here](https://github.com/GenomicaMicrob/metagenomic_pipeline/blob/master/databases.md).
 
 `vsearch --makeudb_usearch EzBioCloud_v1.5.fasta`
 
